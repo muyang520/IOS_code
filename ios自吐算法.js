@@ -401,17 +401,7 @@ resovler.enumerateMatches('exports:libcommonCrypto.dylib!CC*',{
                     this.args2 = args[2]; // 返回值指针
                   },
                   onLeave(retval) {
-                    var ByteArray = Memory.readByteArray(this.args2, 16);
-                    var uint8Array = new Uint8Array(ByteArray);
-                
-                    var str = "";
-                    for(var i = 0; i < uint8Array.length; i++) {
-                        var hextemp = (uint8Array[i].toString(16))
-                        if(hextemp.length == 1){
-                            hextemp = "0" + hextemp
-                        }
-                        str += hextemp;
-                    }
+                    var str = ptrtoBytearrar(this.args2,16);
                     console.log(`CC_MD5(${this.args0.readUtf8String()})`);    // 入参
                     console.log(`CC_MD5 HEX()=${str}=`);             // 返回值
                     console.log(`CC_MD5 Base64()=${hexToBase64(str)}=`);             // 返回值
@@ -438,17 +428,7 @@ resovler.enumerateMatches('exports:libcommonCrypto.dylib!CC*',{
                 this.args1 = args[0]; // 入参
                   },
                   onLeave(retval) {
-                    var ByteArray = Memory.readByteArray(this.args1, 16);
-                    var uint8Array = new Uint8Array(ByteArray);
-                
-                    var str = "";
-                    for(var i = 0; i < uint8Array.length; i++) {
-                        var hextemp = (uint8Array[i].toString(16))
-                        if(hextemp.length == 1){
-                            hextemp = "0" + hextemp
-                        }
-                        str += hextemp;
-                    }
+                    var str = ptrtoBytearrar(this.args1,16);
                     console.log(`CC_MD5 HEX()=${str}=`);             // 返回值
                     console.log(`CC_MD5 Base64()=${hexToBase64(str)}=`);             // 返回值
                     console.log("---------------------------------------------------------------");
@@ -462,17 +442,7 @@ resovler.enumerateMatches('exports:libcommonCrypto.dylib!CC*',{
                     this.args2 = args[2]; // 返回值指针
                   },
                   onLeave(retval) {
-                    var ByteArray = Memory.readByteArray(this.args0, 16);
-                    var uint8Array = new Uint8Array(ByteArray);
-                
-                    var str = "";
-                    for(var i = 0; i < uint8Array.length; i++) {
-                        var hextemp = (uint8Array[i].toString(16))
-                        if(hextemp.length == 1){
-                            hextemp = "0" + hextemp
-                        }
-                        str += hextemp;
-                    }
+                    var str = ptrtoBytearrar(this.args0,16);
                     console.log(`CC_SHA256(${this.args0.readUtf8String()})`);    // 入参
                     console.log(`CC_SHA256 HEX()= ${str}`);             // 返回值
                     console.log(`CC_SHA256 Base64()= ${hexToBase64(str)}`);             // 返回值
@@ -523,17 +493,7 @@ resovler.enumerateMatches('exports:libcommonCrypto.dylib!CC*',{
                     }
                   },
                   onLeave(retval) {
-                    var ByteArray = Memory.readByteArray(this.args5, lengthdata);
-                    var uint8Array = new Uint8Array(ByteArray);
-                
-                    var str = "";
-                    for(var i = 0; i < uint8Array.length; i++) {
-                        var hextemp = (uint8Array[i].toString(16))
-                        if(hextemp.length == 1){
-                            hextemp = "0" + hextemp
-                        }
-                        str += hextemp;
-                    }
+                    var str = ptrtoBytearrar(this.args5,lengthdata);
                     console.log(`${suanfaname} key:(${this.args1.readUtf8String()})`);    // 入参
                     console.log(`${suanfaname} key长度:(${this.args2.toInt32()})`);    // 入参
                     console.log(`${suanfaname} 加密内容:(${this.args3.readUtf8String()})`);    // 入参
@@ -551,6 +511,33 @@ resovler.enumerateMatches('exports:libcommonCrypto.dylib!CC*',{
 })
 
 //Hook加密函数AES、DES、3DES
+/*
+CCCrypt是iOS和macOS平台上的加密算法库，可以使用其中提供的函数实现对数据的加密、解密等操作。下面是CCCrypt函数的参数含义：
+
+    op: 表示加密还是解密操作，取值为kCCEncrypt或kCCDecrypt。
+
+    alg: 表示使用的加密算法，比如AES、DES等，取值为各个算法的常量，例如kCCAlgorithmAES。
+
+    options: 表示加密选项，比如分组密码模式（ECB、CBC、CFB等），填充方式（PKCS7、NoPadding等）等，可以按位或运算进行组合，比如kCCOptionECBMode | kCCOptionPKCS7Padding。
+
+    key: 用于加密和解密的密钥，一般为NSData或者CFDataRef类型。
+
+    keyLength: 密钥长度，单位为字节，例如128位的AES密钥长度为16字节。
+
+    iv: 初始化向量，一般为NSData或者CFDataRef类型，长度为块大小，例如128位AES块大小为16字节。
+
+    dataIn: 输入数据，一般为NSData或者CFDataRef类型。
+
+    dataInLength: 输入数据长度，单位为字节。
+
+    dataOut: 输出数据缓冲区，一般为NSMutableData或者CFMutableDataRef类型。
+
+    dataOutAvailable: 输出数据缓冲区的大小，单位为字节。
+
+    dataOutMoved: 实际输出数据的大小，单位为字节，传入地址（指针）。
+
+    需要注意的是，CCCrypt函数使用时需要保证输入、输出缓冲区的大小合法，否则可能会导致内存越界等问题。另外，对于同一个密钥和初始化向量，加密和解密的参数应该一致才能保证正确性。
+*/
 var CCCryptaddr = Module.getExportByName(null, 'CCCrypt');
 console.log(CCCryptaddr)
 Interceptor.attach(CCCryptaddr,{
