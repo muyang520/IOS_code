@@ -6,7 +6,7 @@
 //
 
 #import "WangluoViewController.h"
-#import "Network/AgentDetection.h"
+#import "../Network/AgentDetection.h"
 
 @interface WangluoViewController ()
 

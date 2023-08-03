@@ -61,18 +61,18 @@ void Anti3() {
     syscall(SYS_ptrace, PT_DENY_ATTACH, 0, 0, 0);
 }
 
-//void Anti4() {
-//#ifdef __arm64__
-//    asm(
-//        "mov x0,#31\n"
-//        "mov x1,#0\n"
-//        "mov x2,#0\n"
-//        "mov x3,#0\n"
-//        "mov w16,#26\n" // 26-->ptrace
-//        "svc #0x80"     // 0x80触发中断去找w16执行
-//        );
-//#endif
-//}
+void Anti4() {
+#ifdef __arm64__
+    asm(
+        "mov x0,#31\n"
+        "mov x1,#0\n"
+        "mov x2,#0\n"
+        "mov x3,#0\n"
+        "mov w16,#26\n" // 26-->ptrace
+        "svc #0x80"     // 0x80触发中断去找w16执行
+        );
+#endif
+}
 
 
 void Anti6() {
@@ -86,14 +86,14 @@ void Anti6() {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    Anti0();
-//    Anti1();
-    
+    Anti1();
+//
 //    if(isAttached()){
 //            NSLog(@"检测到附加，收集手机信息等数据给后台");
 //        }
-//    Anti3();
+    Anti3();
 //    Anti4();
-    Anti6();
+//    Anti6();
 }
 
 /*

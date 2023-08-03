@@ -182,6 +182,15 @@
                                     <segue destination="Zw1-JP-Ln9" kind="push" id="cLx-Tu-ycI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4N-vj-fzD">
+                                <rect key="frame" x="152" y="422" width="96" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="越狱检测"/>
+                                <connections>
+                                    <segue destination="JGL-BU-hf4" kind="show" id="kr2-Ry-IAX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -190,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-748" y="107"/>
+            <point key="canvasLocation" x="-748" y="106.40394088669952"/>
         </scene>
         <!--Wangluo View Controller-->
         <scene sceneID="82d-h6-hlM">
@@ -227,7 +236,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIo-XG-Hf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.599999999999994" y="57.635467980295566"/>
+            <point key="canvasLocation" x="295" y="4"/>
+        </scene>
+        <!--Jailbreak View Controller-->
+        <scene sceneID="TS7-bp-rme">
+            <objects>
+                <viewController id="JGL-BU-hf4" customClass="JailbreakViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0n8-zo-Ewp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddv-E6-e0A">
+                                <rect key="frame" x="48" y="150" width="82" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="文件检测"/>
+                                <connections>
+                                    <action selector="button_Jailbreak_File:" destination="JGL-BU-hf4" eventType="touchUpInside" id="HKG-nY-qwg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPi-dn-III">
+                                <rect key="frame" x="48" y="239" width="110" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="应用列表检测"/>
+                                <connections>
+                                    <action selector="button_Jailbreak_process:" destination="JGL-BU-hf4" eventType="touchUpInside" id="Ef5-oT-gyE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxi-Oc-3qD">
+                                <rect key="frame" x="48" y="312" width="111" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="URLSchemes"/>
+                                <connections>
+                                    <action selector="button_Jailbreak_URLSchemes:" destination="JGL-BU-hf4" eventType="touchUpInside" id="55b-Mi-kzc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ghT-VT-3MQ">
+                                <rect key="frame" x="51" y="405" width="273" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuL-9M-l07">
+                                <rect key="frame" x="48" y="366" width="111" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="环境变量检测"/>
+                                <connections>
+                                    <action selector="button_jailbreak_huanjing:" destination="JGL-BU-hf4" eventType="touchUpInside" id="JzQ-1c-Foa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fIP-XQ-beF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OC8-0y-T3O"/>
+                    <connections>
+                        <outlet property="TextJailbreak" destination="ghT-VT-3MQ" id="w7O-Bb-Ad2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MaE-1P-u9Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336.80000000000001" y="841.62561576354688"/>
         </scene>
         <!--Fantiaoshi View Controller-->
         <scene sceneID="lxV-9H-r0y">
@@ -243,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vg-x0-hzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.599999999999994" y="776.60098522167493"/>
+            <point key="canvasLocation" x="858" y="106"/>
         </scene>
     </scenes>
     <resources>
