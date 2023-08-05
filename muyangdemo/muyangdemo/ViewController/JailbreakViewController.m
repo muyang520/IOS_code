@@ -187,7 +187,7 @@ BOOL isJailbroken4() {
     }else{
         self.TextJailbreak.text = @"未越狱";
     }
- 
+   
 }
 
 - (IBAction)button_Jailbreak_process:(id)sender {
@@ -215,12 +215,6 @@ bool isJailbroken_huanjing(){
     }else{
         self.TextJailbreak.text = @"未越狱";
     }
-    
-    int f;
-    // 函数执行成功返回打开的文件句柄，-1 打开失败
-    f=open([@"/System/Library/Frameworks/CFNetwork.framework/zh_CN.lproj/Localizable.strings" UTF8String], O_RDONLY);
-    
-    close(f);
 }
 
 
