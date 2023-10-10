@@ -1,23 +1,12 @@
-function showStacks() {
-    var Exception = Java.use("java.lang.Exception");
-    var ins = Exception.$new("Exception");
-    var straces = ins.getStackTrace();
-
-    if (undefined == straces || null == straces) {
-        return;
-    }
+function showStacks(context) {
 
     console.log("============================= Stack strat=======================");
     console.log("");
-
-    for (var i = 0; i < straces.length; i++) {
-        var str = "   " + straces[i].toString();
-        console.log(str);
-    }
+    console.log(Thread.backtrace(context, Backtracer.ACCURATE)
+    .map(DebugSymbol.fromAddress).join('\n') + '\n');
 
     console.log("");
     console.log("============================= Stack end=======================\r\n");
-    Exception.$dispose();
 }
 var base64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 var base64DecodeChars = new Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1);
@@ -397,6 +386,9 @@ resovler.enumerateMatches('exports:libcommonCrypto.dylib!CC*',{
             Interceptor.attach(methodaddr,{
                 onEnter(args) {
                     console.log("MD5算法");
+                    showStacks(this.context);
+                    // console.log(Thread.backtrace(this.context, Backtracer.ACCURATE)
+                    // .map(DebugSymbol.fromAddress).join('\n') + '\n');
                     this.args0 = args[0]; // 入参
                     this.args2 = args[2]; // 返回值指针
                   },
@@ -569,6 +561,7 @@ Interceptor.attach(CCCryptaddr,{
         console.log("输出内容实际长度: ",this.dataOutMoved.toInt32());
         console.log("加密结果 HEX:",ptrtoBytearrar(this.dataOut,Memory.readUInt(this.dataOutMoved)))
         console.log("加密结果 Base64:",hexToBase64(ptrtoBytearrar(this.dataOut,Memory.readUInt(this.dataOutMoved))))
+        showStacks(this.context)
         console.log("---------------------------------------------------------------");
        }
        if (this.op == 1) {

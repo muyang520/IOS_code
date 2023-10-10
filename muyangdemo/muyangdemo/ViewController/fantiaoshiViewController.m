@@ -60,7 +60,6 @@ BOOL isAttached(void){
 void Anti3() {
     syscall(SYS_ptrace, PT_DENY_ATTACH, 0, 0, 0);
 }
-NSString *className = NSStringFromClass([YourClass class]);
 void Anti4() {
 #ifdef __arm64__
     asm(

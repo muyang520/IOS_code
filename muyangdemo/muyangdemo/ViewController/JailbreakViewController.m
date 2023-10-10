@@ -206,6 +206,9 @@ BOOL isJailbroken4() {
 }
 
 bool isJailbroken_huanjing(){
+    NSMutableString *result = [NSMutableString stringWithString:@"Hello, "];
+    [result appendFormat:@"%@ is %d years old", "name", "age"];
+    
     if(TARGET_IPHONE_SIMULATOR)return NO;
     return !(NULL == getenv("DYLD_INSERT_LIBRARIES"));
 }

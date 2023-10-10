@@ -18,12 +18,14 @@
 		045C3B4A2A035C5400DF0281 /* DesUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C3B492A035C5400DF0281 /* DesUtils.m */; };
 		045C3B4D2A035C8F00DF0281 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C3B4C2A035C8F00DF0281 /* GTMBase64.m */; };
 		045C3B532A035D2200DF0281 /* NSString+NSReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C3B522A035D2200DF0281 /* NSString+NSReplace.m */; };
+		0471A8AD2A8078410084A635 /* FridaDeteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0471A8AC2A8078410084A635 /* FridaDeteViewController.m */; };
 		048ADB612A77DAE100168B47 /* JailbreakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ADB602A77DAE100168B47 /* JailbreakViewController.m */; };
 		049CCFB42A64D9C800738E74 /* AgentDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 049CCFB32A64D9C800738E74 /* AgentDetection.m */; };
 		049CCFB82A64DA1B00738E74 /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 049CCFB72A64DA1B00738E74 /* AppInfo.m */; };
 		049CCFC12A64E37400738E74 /* WangluoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049CCFC02A64E37400738E74 /* WangluoViewController.m */; };
 		04B74E0E29F9300400EDF336 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B74E0D29F9300400EDF336 /* People.m */; };
 		04BE0FBD2A78C705009BDA42 /* FileAndFolderPathDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0FBC2A78C705009BDA42 /* FileAndFolderPathDetection.m */; };
+		3287582A2AD446D1000C9B92 /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 328758282AD446D0000C9B92 /* md5.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		045C3B4E2A035CFD00DF0281 /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		045C3B512A035D2200DF0281 /* NSString+NSReplace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+NSReplace.h"; sourceTree = "<group>"; };
 		045C3B522A035D2200DF0281 /* NSString+NSReplace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSReplace.m"; sourceTree = "<group>"; };
+		0471A8AB2A8078410084A635 /* FridaDeteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FridaDeteViewController.h; sourceTree = "<group>"; };
+		0471A8AC2A8078410084A635 /* FridaDeteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FridaDeteViewController.m; sourceTree = "<group>"; };
 		048ADB5F2A77DAE100168B47 /* JailbreakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JailbreakViewController.h; sourceTree = "<group>"; };
 		048ADB602A77DAE100168B47 /* JailbreakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JailbreakViewController.m; sourceTree = "<group>"; };
 		049CCFB22A64D9C800738E74 /* AgentDetection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgentDetection.h; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 		04B74E0D29F9300400EDF336 /* People.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
 		04BE0FBB2A78C705009BDA42 /* FileAndFolderPathDetection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileAndFolderPathDetection.h; sourceTree = "<group>"; };
 		04BE0FBC2A78C705009BDA42 /* FileAndFolderPathDetection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileAndFolderPathDetection.m; sourceTree = "<group>"; };
+		328758282AD446D0000C9B92 /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = md5.c; sourceTree = "<group>"; };
+		328758292AD446D0000C9B92 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 		0436ACD629EA49D300431E99 /* muyangdemo */ = {
 			isa = PBXGroup;
 			children = (
+				328758272AD44684000C9B92 /* C_suanfacode */,
 				048ADB622A77DAE800168B47 /* ViewController */,
 				049CCFB92A64DA6700738E74 /* SystemHeaders */,
 				049CCFB52A64DA0400738E74 /* CommonUtil */,
@@ -118,12 +125,14 @@
 			children = (
 				0436ACDD29EA49D300431E99 /* ViewController.h */,
 				049CCFBF2A64E37400738E74 /* WangluoViewController.h */,
-				049CCFC02A64E37400738E74 /* WangluoViewController.m */,
 				0436ACDE29EA49D300431E99 /* ViewController.m */,
+				049CCFC02A64E37400738E74 /* WangluoViewController.m */,
 				042AF9132A70C2F00001D03C /* fantiaoshiViewController.h */,
 				042AF9142A70C2F00001D03C /* fantiaoshiViewController.m */,
 				048ADB5F2A77DAE100168B47 /* JailbreakViewController.h */,
 				048ADB602A77DAE100168B47 /* JailbreakViewController.m */,
+				0471A8AB2A8078410084A635 /* FridaDeteViewController.h */,
+				0471A8AC2A8078410084A635 /* FridaDeteViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -172,6 +181,15 @@
 				049CCFB32A64D9C800738E74 /* AgentDetection.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		328758272AD44684000C9B92 /* C_suanfacode */ = {
+			isa = PBXGroup;
+			children = (
+				328758282AD446D0000C9B92 /* md5.c */,
+				328758292AD446D0000C9B92 /* md5.h */,
+			);
+			path = C_suanfacode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0471A8AD2A8078410084A635 /* FridaDeteViewController.m in Sources */,
 				045C3B4A2A035C5400DF0281 /* DesUtils.m in Sources */,
 				0436ACDF29EA49D300431E99 /* ViewController.m in Sources */,
 				042AF9152A70C2F00001D03C /* fantiaoshiViewController.m in Sources */,
@@ -255,6 +274,7 @@
 				049CCFB82A64DA1B00738E74 /* AppInfo.m in Sources */,
 				0436ACEA29EA49D500431E99 /* main.m in Sources */,
 				0436ACF229EA4DF300431E99 /* Utils.m in Sources */,
+				3287582A2AD446D1000C9B92 /* md5.c in Sources */,
 				045C3B4D2A035C8F00DF0281 /* GTMBase64.m in Sources */,
 				045C3B532A035D2200DF0281 /* NSString+NSReplace.m in Sources */,
 				049CCFC12A64E37400738E74 /* WangluoViewController.m in Sources */,
@@ -400,7 +420,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5S3HA66569;
+				DEVELOPMENT_TEAM = VG3JP7K3QJ;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = muyangdemo/Info.plist;
@@ -428,7 +448,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5S3HA66569;
+				DEVELOPMENT_TEAM = VG3JP7K3QJ;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = muyangdemo/Info.plist;
